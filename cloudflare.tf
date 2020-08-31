@@ -1,17 +1,3 @@
-terraform {
-  required_providers {
-    cloudflare = {
-      source = "cloudflare/cloudflare"
-      version = "2.10.1"
-    }
-  }
-}
-
-provider "cloudflare" {
-  email = "moayad.ismail@gmail.com"
-  api_key = "b59244cd3defbaa1dd8b174cea2a106abd346"
-}
-
 variable "domain" {
   default = "imoayad.me"
 }
