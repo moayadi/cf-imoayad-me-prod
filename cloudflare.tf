@@ -22,7 +22,7 @@ data "cloudflare_zones" "zone" {
 }
 
 resource "cloudflare_record" "vaultserver" {
-  zone_id = data.cloudflare_zones.zones[0].id
+  zone_id = data.cloudflare_zones.zone.zones[0].id
   name    = "vault.imoayad.me"
   value   = "34.227.192.182"
   type    = "A"
