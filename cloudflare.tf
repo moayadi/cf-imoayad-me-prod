@@ -2,6 +2,14 @@ variable "domain" {
   default = "imoayad.me"
 }
 
+variable "username" {
+  type = string
+}
+
+variable "apikey" {
+  type = string
+}
+
 resource "cloudflare_zone" "imoayad" {
     zone = var.domain
 }
