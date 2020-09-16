@@ -45,5 +45,5 @@ resource "cloudflare_record" "vaultserver2" {
   value   = "34.227.192.182"
   type    = "A"
   ttl     = 1
-  proxied = false
+  proxied = true
 }
