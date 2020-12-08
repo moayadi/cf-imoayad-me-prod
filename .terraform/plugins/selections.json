@@ -1,0 +1,6 @@
+{
+  "registry.terraform.io/cloudflare/cloudflare": {
+    "hash": "h1:cUJO7MT2DtUMjK2FtXwEcjqg6kv1TIqEs1gNXqdP4LE=",
+    "version": "2.14.0"
+  }
+}

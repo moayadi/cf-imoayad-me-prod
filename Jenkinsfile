@@ -8,7 +8,7 @@ pipeline {
           VAULT_ADDR="https://192.168.50.101:8200"
           ROLE_ID="158ff78e-21ac-43ef-fb01-5fb2a3294419"
           SECRET_ID=credentials("SECRET_ID")
-          TFE_WORKSPACE_NAME="jenkinsdemo"
+          TFE_WORKSPACE_NAME="cf-imoayad-me-prod"
           TFE_ORGANIZATION='moayadi'
     }
 
