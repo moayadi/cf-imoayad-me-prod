@@ -16,7 +16,7 @@ module "cloudflare_record_url1" {
   zone_id = data.cloudflare_zones.zone.zones[0].id
   name    = var.configuration.prod.url1.name
   ip      = var.configuration.prod.url1.ip
-  proxied = false
+  proxied = true
 
 }
 
@@ -26,6 +26,7 @@ module "cloudflare_record_url2" {
   zone_id = data.cloudflare_zones.zone.zones[0].id
   name    = var.configuration.prod.url2.name
   ip      = var.configuration.prod.url2.ip
+  proxied = true
 }
 
 module "cloudflare_record_url3" {
@@ -34,6 +35,7 @@ module "cloudflare_record_url3" {
   zone_id = data.cloudflare_zones.zone.zones[0].id
   name    = var.configuration.prod.url3.name
   ip      = var.configuration.prod.url3.ip
+  proxied = true
 }
 
 
