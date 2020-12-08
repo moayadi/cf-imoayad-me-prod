@@ -33,7 +33,7 @@ variable "configuration" {
     prod = { # STAGING VARIABLES
         url1 = {
           name = "host1.prod.imoayad.me"
-          ip = "34.227.192.182"
+          ip = "34.227.192.184"
         }
         url2 = {
           name = "host2.prod.imoayad.me"
