@@ -14,7 +14,7 @@ module "cloudflare_record_url1" {
   zone_id = data.cloudflare_zones.zone.zones[0].id
   name    = var.configuration.prod.url1.name
   ip      = var.configuration.prod.url1.ip
-  proxied = true
+  proxied = false
 
 }
 
