@@ -1,6 +1,4 @@
 provider "cloudflare" {
-
-
 }
 
 data "cloudflare_zones" "zone" {
