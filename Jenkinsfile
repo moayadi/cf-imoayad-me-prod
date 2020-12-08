@@ -28,7 +28,7 @@ pipeline {
     stage('GetCode') {
         steps {
           git poll: false, url: 'https://github.com/moayadi/cf-imoayad-me-prod'
-          sh 'tar -zcvf jenkinsdemo.tar.gz -C . --exclude .git --exclude .terraform .'
+          sh 'rm ./jenkinsdemo.tar.gz'
 
         }
       }
@@ -44,15 +44,16 @@ pipeline {
                       "data": {
                         "type": "configuration-versions",
                         "attributes": {
-                          "auto-queue-runs": false
+                          "auto-queue-runs": true
                         }
                       }
                     }' > configuration.json
                 '''
             sh 'tar -zcvf jenkinsdemo.tar.gz -C . --exclude .git --exclude .terraform .'
+            sh 'ls'
 
             sh '''#!/bin/bash
-            echo Get workspace id
+            echo "Get workspace id"
             H1="Content-Type: application/vnd.api+json"
             H2="Authorization: Bearer $TFE_TOKEN"
             URL="https://app.terraform.io/api/v2/organizations/$TFE_ORGANIZATION/workspaces/$TFE_WORKSPACE_NAME"
@@ -60,6 +61,7 @@ pipeline {
             '''
 
             sh '''#!/bin/bash
+            echo I am here
             workspace_id=($(cat workspace_results.json | jq -r '.data.id'))
             H1="Content-Type: application/vnd.api+json"
             H2="Authorization: Bearer $TFE_TOKEN"
@@ -71,7 +73,7 @@ pipeline {
             config_id=($(cat config_results.json | jq -r '.data.id'))
             # echo $config_id
             config_url=($(cat config_results.json | jq -r '.data.attributes."upload-url"'))
-            # echo $config_url
+            echo $config_url
             H1="Content-Type: application/octet-stream"
             H2="Authorization: Bearer $TFE_TOKEN"
             # URL=$config_url
